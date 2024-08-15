@@ -383,7 +383,7 @@ reshaped_condition_totals <- data.frame(
   `Totals Among Total Survey Respondents` = unlist(condition_totals)
 )
 
-full_join(final_table, reshaped_condition_totals, by = "Variable")
+final_table <- full_join(final_table, reshaped_condition_totals, by = "Variable")
 
 write.csv(final_table, "outputs/tables/Table 2.csv", row.names = FALSE)
 ################################################################################
