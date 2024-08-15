@@ -24,8 +24,7 @@ data <- left_join(hc, pmeds, by = "id") %>%
             n_drugs >= 6 & n_drugs <= 7 ~ "6-7",
             n_drugs >= 8 & n_drugs <= 9 ~ "8-9",
             n_drugs >= 10 ~ '10+'
-  ),
-  subpop = ifelse(adult == 1, 1, 0))
+  ))
 
 data$n_presc_cat <- factor(data$n_presc_cat, 
                            levels = c('None',"1", "2-3", "4-5", "6-7", "8-9", "10+"))
@@ -287,8 +286,104 @@ final_table <- final_table %>%
 write.csv(final_table, "outputs/tables/Table 1.csv", row.names = FALSE)
 ################################################################################
 
+# Creating binary flags for each group
+data$Cancer <- data$cancer_cond
+data$Cardiovascular <- as.integer(rowSums(data[, c("angidx", "midx", "ohrtdx", "strkdx")] == 1) > 0)
+data$Respiratory <- as.integer(rowSums(data[, c("emphdx", "asthdx")] == 1) > 0)
+data$Diabetes <- data$diab
+data$HighBP <- data$hibpdx
+data$HighChol <- data$choldx
 
-data$can
 
+generate_table2 <- function(data, subset_condition = NULL) {
+  
+  svy_data <- svydesign(
+    id = ~VARPSU, 
+    strata = ~VARSTR,
+    weights = ~poolwt, 
+    data = data, 
+    nest = TRUE
+  )
+  
+  if (!is.null(subset_condition)) {
+    svy_data <- subset(svy_data, eval(parse(text = subset_condition)))
+  }
+  
+  get_survey_means <- function(variable, design) {
+    results <- svymean(as.formula(paste0("~", variable)), design = design, na.rm = TRUE)
+    df <- data.frame(
+      Category = names(results),
+      Percentage = as.vector(results) * 100
+    ) %>%
+      mutate(
+        Percentage = sprintf("%.1f", Percentage)
+      )
+    return(df)
+  }
+  
+  
+  variables <-  c("Cancer", "Cardiovascular", "Respiratory",
+                 "Diabetes", "HighBP", "HighChol")
+  
+  results_list <- list()
+  for (var in variables) {
+      results_list[[var]] <- get_survey_means(var, svy_data)
+    }
+  
+  final_table <- bind_rows(results_list, .id = "Variable")
+  
+  variable_order <- c("Cancer", "Cardiovascular", "Respiratory",
+                      "Diabetes", "HighBP", "HighChol")
+  
+  final_table <- final_table %>%
+    mutate(Variable = factor(Variable, levels = variable_order)) %>%
+    arrange(Variable) %>%
+    select(Variable, Category, Percentage)
+  
+  # Add the unweighted N
+  unweighted_n <- nrow(svy_data$variables)
+  final_table <- rbind(data.frame(Variable = '', 
+                                  Category = '', 
+                                  Percentage = paste("(unweighted) N=", as.character(unweighted_n))),
+                       final_table)
+  
+  return(final_table)
+}
 
+table_all <- generate_table2(data, "adult == 1") %>%
+  rename("Total Survey Respondents %" = Percentage)
 
+table_with_drugs <- generate_table2(data, "adult == 1 & n_drugs > 0") %>%
+  rename("At least One Prescription %" = Percentage)
+
+table_with_pgx <- generate_table2(data, "adult == 1 & n_pgx > 0") %>%
+  rename("At least One PGx Prescription %" = Percentage)
+
+table_with_drugs_no_pgx <- generate_table2(data, "adult == 1 & n_drugs > 0 & n_pgx == 0") %>%
+  rename("At least One Prescription, No PGx %" = Percentage)
+
+# Join the tables together on the Variable column
+final_table <- full_join(table_all, table_with_drugs, c("Variable", 'Category')) %>%
+  full_join(table_with_pgx, by = c("Variable", 'Category')) %>%
+  full_join(table_with_drugs_no_pgx, by = c("Variable", 'Category')) %>%
+  select(-Category)
+
+# get sums for each measure for adult == 1
+condition_totals <- data %>%
+  filter(adult == 1) %>%
+  summarize(Cancer = paste('n =' , sum(Cancer)),
+            Cardiovascular = paste('n =' , sum(Cardiovascular)),
+            Respiratory = paste('n =' ,sum(Respiratory)),
+            Diabetes = paste('n =' ,sum(Diabetes)),
+            HighBP = paste('n =' ,sum(HighBP)),
+            HighChol = paste('n =' ,sum(HighChol))) 
+
+reshaped_condition_totals <- data.frame(
+  Variable = c("Cancer", "Cardiovascular", "Respiratory", "Diabetes", "HighBP", "HighChol"),
+  `Totals Among Total Survey Respondents` = unlist(condition_totals)
+)
+
+full_join(final_table, reshaped_condition_totals, by = "Variable")
+
+write.csv(final_table, "outputs/tables/Table 2.csv", row.names = FALSE)
+################################################################################
