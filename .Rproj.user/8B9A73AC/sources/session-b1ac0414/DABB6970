@@ -1,0 +1,26 @@
+{
+    "id": "DABB6970",
+    "path": "~/GitHub/pgx/src/tables.R",
+    "project_path": "src/tables.R",
+    "type": "r_source",
+    "hash": "2745125012",
+    "contents": "",
+    "dirty": false,
+    "created": 1723655315884.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "271,23",
+        "scrollLine": "268"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1723732937,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1723732937915,
+    "read_only": false,
+    "read_only_alternatives": []
+}

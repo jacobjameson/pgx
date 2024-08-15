@@ -1,0 +1,238 @@
+Drug,Gene
+abacavir,HLA-B
+acenocoumarol,CYP2C9
+acenocoumarol,CYP4F2
+allopurinol,HLA-A
+allopurinol,HLA-B
+amifampridine,NAT2
+amifampridine phosphate,NAT2
+amikacin,MT-RNR1
+amitriptyline,CYP2C19
+amitriptyline,CYP2D6
+amoxapine,CYP2D6
+amphetamine,CYP2D6
+aripiprazole,CYP2D6
+aripiprazole lauroxil,CYP2D6
+aspirin,G6PD
+atazanavir,UGT1A1
+atenolol,ADRB1
+atenolol,GRK5
+atomoxetine,CYP2D6
+atorvastatin,SLCO1B1
+avatrombopag,CYP2C9
+azathioprine,NUDT15
+azathioprine,TPMT
+belinostat,UGT1A1
+brexpiprazole,CYP2D6
+brivaracetam,CYP2C19
+bucindolol,ADRB1
+bupropion,CYP2B6
+capecitabine,DPYD
+carbamazepine,HLA-A
+carbamazepine,HLA-B
+carbamazepine,SCN1A
+carglumic acid,NAGS
+carisoprodol,CYP2C19
+carvedilol,ADRB1
+carvedilol,CYP2D6
+carvedilol,GRK5
+celecoxib,CYP2C9
+cevimeline,CYP2D6
+chloramphenicol,G6PD
+chlorpropamide,G6PD
+ciprofloxacin,G6PD
+citalopram,CYP2C19
+citalopram,SLC6A4
+clobazam,CYP2C19
+clomipramine,CYP2C19
+clomipramine,CYP2D6
+clopidogrel,CYP2C19
+clozapine,CYP2D6
+codeine,CYP2D6
+dabrafenib,G6PD
+dapsone,G6PD
+darifenacin,CYP2D6
+daunorubicin,SLC28A3
+desflurane,CACNA1S
+desflurane,RYR1
+desipramine,CYP2D6
+deutetrabenazine,CYP2D6
+dexlansoprazole,CYP2C19
+dextromethorphan,CYP2D6
+diazepam,CYP2C19
+dimercaprol,G6PD
+divalproex sodium,POLG
+dolutegravir,UGT1A1
+donepezil,CYP2D6
+doxepin,CYP2C19
+doxepin,CYP2D6
+doxorubicin,SLC28A3
+dronabinol,CYP2C9
+efavirenz,CYP2B6
+elagolix,SLCO1B1
+eliglustat,CYP2D6
+enflurane,CACNA1S
+enflurane,RYR1
+erdafitinib,CYP2C9
+escitalopram,CYP2C19
+escitalopram,SLC6A4
+esomeprazole,CYP2C19
+fesoterodine,CYP2D6
+flecainide,CYP2D6
+flibanserin,CYP2C19
+flibanserin,CYP2C9
+flibanserin,CYP2D6
+fluorouracil,DPYD
+flurbiprofen,CYP2C9
+fluvastatin,CYP2C9
+fluvastatin,SLCO1B1
+fluvoxamine,CYP2D6
+fosphenytoin,CYP2C9
+fosphenytoin,HLA-B
+galantamine,CYP2D6
+gefitinib,CYP2D6
+gentamicin,MT-RNR1
+glibenclamide,G6PD
+glimepiride,G6PD
+glipizide,G6PD
+haloperidol,CYP2D6
+halothane,CACNA1S
+halothane,RYR1
+hydralazine,NAT2
+hydrocodone,CYP2D6
+hydroxychloroquine,G6PD
+ibuprofen,CYP2C9
+iloperidone,CYP2D6
+imipramine,CYP2C19
+imipramine,CYP2D6
+irinotecan,UGT1A1
+isoflurane,CACNA1S
+isoflurane,RYR1
+isoniazid,NAT2
+ivacaftor,CFTR
+kanamycin,MT-RNR1
+l-methylfolate,MTHFR
+labetalol,CYP2D6
+lansoprazole,CYP2C19
+lapatinib,HLA-DRB1
+lesinurad,CYP2C9
+lidocaine,G6PD
+lofexidine,CYP2D6
+lornoxicam,CYP2C9
+lovastatin,SLCO1B1
+mafenide,G6PD
+meclizine,CYP2D6
+meloxicam,CYP2C9
+mercaptopurine,NUDT15
+mercaptopurine,TPMT
+mesalazine,G6PD
+methadone,CYP2B6
+methoxyflurane,CACNA1S
+methoxyflurane,RYR1
+methylene blue,G6PD
+metoclopramide,CYP2D6
+metoprolol,ADRB1
+metoprolol,CYP2D6
+metoprolol,GRK5
+mirabegron,CYP2D6
+mirtazapine,CYP2D6
+mivacurium,BCHE
+moxifloxacin,G6PD
+mycophenolic acid,HPRT1
+nalidixic acid,G6PD
+nebivolol,CYP2D6
+nevirapine,CYP2B6
+nilotinib,UGT1A1
+nitrofurantoin,G6PD
+norfloxacin,G6PD
+nortriptyline,CYP2D6
+oliceridine,CYP2D6
+omeprazole,CYP2C19
+ondansetron,CYP2D6
+oxcarbazepine,HLA-B
+pantoprazole,CYP2C19
+paromomycin,MT-RNR1
+paroxetine,CYP2D6
+pazopanib,HLA-B
+pazopanib,UGT1A1
+peginterferon alfa-2a,IFNL3
+peginterferon alfa-2a,IFNL4
+peginterferon alfa-2b,IFNL3
+peginterferon alfa-2b,IFNL4
+pegloticase,G6PD
+perphenazine,CYP2D6
+phenazopyridine,G6PD
+phenprocoumon,CYP4F2
+phenytoin,CYP2C9
+phenytoin,HLA-B
+phenytoin,SCN1A
+pimozide,CYP2D6
+piroxicam,CYP2C9
+pitavastatin,SLCO1B1
+pitolisant,CYP2D6
+plazomicin,MT-RNR1
+pravastatin,SLCO1B1
+primaquine,G6PD
+probenecid,G6PD
+procainamide,NAT2
+propafenone,CYP2D6
+propranolol,CYP2D6
+protriptyline,CYP2D6
+quinine,G6PD
+rabeprazole,CYP2C19
+raltegravir,UGT1A1
+rasburicase,G6PD
+risperidone,CYP2D6
+rosuvastatin,ABCG2
+rosuvastatin,SLCO1B1
+sacituzumab govitecan-hziy,UGT1A1
+sertraline,CYP2C19
+sevoflurane,CACNA1S
+sevoflurane,RYR1
+simvastatin,SLCO1B1
+siponimod,CYP2C9
+sodium nitrite,G6PD
+streptomycin,MT-RNR1
+succinylcholine,BCHE
+succinylcholine,CACNA1S
+succinylcholine,RYR1
+sulfacetamide,G6PD
+sulfadiazine,G6PD
+sulfamethoxazole / trimethoprim,G6PD
+sulfamethoxazole / trimethoprim,NAT2
+sulfasalazine,G6PD
+sulfasalazine,NAT2
+sulfisoxazole,G6PD
+tacrolimus,CYP3A5
+tafenoquine,G6PD
+tamoxifen,CYP2D6
+tamsulosin,CYP2D6
+tenoxicam,CYP2C9
+tetrabenazine,CYP2D6
+thioguanine,NUDT15
+thioguanine,TPMT
+thioridazine,CYP2D6
+timolol,CYP2D6
+tobramycin,MT-RNR1
+tolterodine,CYP2D6
+tramadol,CYP2D6
+trimipramine,CYP2C19
+trimipramine,CYP2D6
+tropisetron,CYP2D6
+valbenazine,CYP2D6
+valproic acid,ABL2
+valproic acid,ASL
+valproic acid,ASS1
+valproic acid,CPS1
+valproic acid,NAGS
+valproic acid,OTC
+valproic acid,POLG
+velaglucerase alfa,GBA
+venlafaxine,CYP2D6
+viloxazine,CYP2D6
+voriconazole,CYP2C19
+vortioxetine,CYP2D6
+warfarin,CYP2C9
+warfarin,CYP4F2
+warfarin,VKORC1
+zuclopenthixol,CYP2D6
