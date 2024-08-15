@@ -62,7 +62,8 @@ pgx <- read.csv("PGx Medications/pgx_meds.csv") %>%
 # split RXDRGNAM into individual words ----------------------------------------
 pmeds <- pmeds %>% 
   mutate(RX = RXDRGNAM,
-         RXDRGNAM = str_replace_all(RXDRGNAM, "[[:punct:]]", " ")) %>% 
+         RXDRGNAM = str_replace_all(RXDRGNAM, "[[:punct:]]", " "),
+         pgx_conservative = ifelse(RXDRGNAM %in% pgx, 1, 0)) %>% 
   separate(RXDRGNAM, into = paste0("RX", 1:5), sep = " ") %>% 
   mutate(across(starts_with("word"), tolower)) 
 
@@ -78,6 +79,7 @@ pmeds <- pmeds %>%
   group_by(id) %>% 
   summarise(n_drugs = n_distinct(RX),
             n_pgx = sum(pgx, na.rm = TRUE), 
+            pgx_conservative = sum(pgx_conservative, na.rm = TRUE), 
             .groups = "drop")
 
 

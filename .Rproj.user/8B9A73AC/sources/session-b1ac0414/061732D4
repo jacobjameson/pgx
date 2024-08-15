@@ -1,0 +1,26 @@
+{
+    "id": "061732D4",
+    "path": "~/GitHub/pgx/src/regressions.R",
+    "project_path": "src/regressions.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1723735258709.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "150,0",
+        "scrollLine": "127"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1723736890,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1723737037829,
+    "read_only": false,
+    "read_only_alternatives": []
+}
